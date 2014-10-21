@@ -2,7 +2,7 @@ package modelo;
 
 public class FuncionarioComum implements Funcionario {
 	
-	FuncionarioComum(String nome, String login, String senha){
+	public FuncionarioComum(String nome, String login, String senha){
 		
 		this.nome = nome;
 		this.login = login;
