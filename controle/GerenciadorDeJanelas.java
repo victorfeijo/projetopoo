@@ -9,7 +9,12 @@ public final class GerenciadorDeJanelas {
 	}
 	
 	public static void telaCadastroFuncionario(){
-		CriarUsuario application = new CriarUsuario();
+		CriarUsuario2 application = new CriarUsuario2();
+		application.setVisible(true);
+	}
+	
+	public static void telaPrincipal(){
+		Principal2 application = new Principal2();
 		application.setVisible(true);
 	}
 	

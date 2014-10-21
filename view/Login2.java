@@ -42,27 +42,27 @@ public class Login2 extends JFrame {
 	public Login2() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400, 187);
+		setBounds(100, 100, 400, 156);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		loginField = new JTextField();
-		loginField.setBounds(122, 41, 140, 19);
+		loginField.setBounds(122, 20, 140, 19);
 		contentPane.add(loginField);
 		loginField.setColumns(10);
 		
 		passwordField = new JPasswordField();
-		passwordField.setBounds(122, 72, 140, 19);
+		passwordField.setBounds(122, 51, 140, 19);
 		contentPane.add(passwordField);
 		
 		lblUsurio = new JLabel("Usuário");
-		lblUsurio.setBounds(50, 41, 70, 15);
+		lblUsurio.setBounds(50, 20, 70, 15);
 		contentPane.add(lblUsurio);
 		
 		lblSenha = new JLabel("Senha");
-		lblSenha.setBounds(50, 72, 70, 15);
+		lblSenha.setBounds(50, 51, 70, 15);
 		contentPane.add(lblSenha);
 		
 		btnEntrar = new JButton("Entrar");
@@ -71,7 +71,7 @@ public class Login2 extends JFrame {
 				entrar();
 			}
 		});
-		btnEntrar.setBounds(50, 121, 117, 25);
+		btnEntrar.setBounds(54, 91, 117, 25);
 		contentPane.add(btnEntrar);
 		
 		btnCadastrar = new JButton("Cadastrar");
@@ -80,7 +80,7 @@ public class Login2 extends JFrame {
 				cadastrar();
 			}
 		});
-		btnCadastrar.setBounds(209, 121, 117, 25);
+		btnCadastrar.setBounds(225, 91, 117, 25);
 		contentPane.add(btnCadastrar);
 	}
 	

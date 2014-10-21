@@ -8,6 +8,7 @@ import exception.SenhaInvalidaEX;
 public final class Faixada {
 
 	private static final EscritorioDeAdvocacia escritorio = new EscritorioDeAdvocacia();
+	private static String usuarioAtual = "Nenhum Usuário";
 	
 	public static void autentica(String login, String senha) throws SenhaInvalidaEX{
 		
@@ -16,7 +17,8 @@ public final class Faixada {
 				throw new SenhaInvalidaEX("Login Inválido");
 			}
 			if(funcionario.getAutenticavel(senha)){
-				//GerenciadorDeJanelas.telaPrincipal();
+				usuarioAtual = funcionario.getNome();
+				GerenciadorDeJanelas.telaPrincipal();
 			}
 			else{
 				throw new SenhaInvalidaEX("Senha Inválida");
@@ -35,6 +37,10 @@ public final class Faixada {
 		else{
 			throw new SenhaInvalidaEX("Senha do Adm inválida");
 		}
+	}
+	
+	public static String getUsuarioAtual(){
+		return usuarioAtual;
 	}
 	
 	
