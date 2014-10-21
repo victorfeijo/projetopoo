@@ -4,6 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import controle.Faixada;
+import exception.SenhaInvalidaEX;
+
 public class CriarUsuario extends JFrame {
 	private JTextField nameField, loginField;
 	private JPasswordField passwordField, admPassField;
@@ -54,7 +57,7 @@ public class CriarUsuario extends JFrame {
 		new ActionListener() {
 
 			public void actionPerformed(ActionEvent event) {
-				// metodo da ViewMestre que cria o funcionario
+				cadastrarFuncionario();
 			}
 		});
 
@@ -78,4 +81,14 @@ public class CriarUsuario extends JFrame {
 
 	}
 
+	public void cadastrarFuncionario() {
+		try {
+			Faixada.cadastrarFuncionario(nameField.getText(),
+					loginField.getText(), passwordField.getText(),
+					admPassField.getText());
+			dispose();
+		} catch (SenhaInvalidaEX e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
+	}
 }
