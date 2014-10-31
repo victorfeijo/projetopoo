@@ -18,5 +18,10 @@ public final class GerenciadorDeJanelas {
 		application.setVisible(true);
 	}
 	
+	public static void telaCadastroDeCliente(){
+		CadastrarCliente2 application = new CadastrarCliente2();
+		application.setVisible(true);
+	}
+	
 
 }

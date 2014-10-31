@@ -8,7 +8,8 @@ import exception.SenhaInvalidaEX;
 public final class Faixada {
 
 	private static final EscritorioDeAdvocacia escritorio = new EscritorioDeAdvocacia();
-	private static String usuarioAtual = "Nenhum Usuário";
+	private static Funcionario usuarioAtual = null;
+	private static Cliente clienteAtual = null;
 	
 	public static void autentica(String login, String senha) throws SenhaInvalidaEX{
 		
@@ -17,7 +18,7 @@ public final class Faixada {
 				throw new SenhaInvalidaEX("Login Inválido");
 			}
 			if(funcionario.getAutenticavel(senha)){
-				usuarioAtual = funcionario.getNome();
+				usuarioAtual = funcionario;
 				GerenciadorDeJanelas.telaPrincipal();
 			}
 			else{
@@ -39,7 +40,14 @@ public final class Faixada {
 		}
 	}
 	
-	public static String getUsuarioAtual(){
+	public static void cadastrarCliente(String nome, String cpf, String rg, String telefone, String endereco, String email){
+		
+		Cliente cliente = new ClienteDeAdvocacia(nome, telefone, cpf, rg, endereco, email);
+		escritorio.adicionarCliente(cliente);
+		clienteAtual = cliente;
+	}
+	
+	public static Funcionario getUsuarioAtual(){
 		return usuarioAtual;
 	}
 	

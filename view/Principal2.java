@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import controle.Faixada;
+import controle.GerenciadorDeJanelas;
 
 public class Principal2 extends JFrame {
 
@@ -62,7 +63,7 @@ public class Principal2 extends JFrame {
 		btnEventos.setBounds(487, 432, 161, 25);
 		contentPane.add(btnEventos);
 
-		JLabel usuarioAtual = new JLabel(Faixada.getUsuarioAtual());
+		JLabel usuarioAtual = new JLabel(Faixada.getUsuarioAtual().getNome());
 		usuarioAtual.setFont(new Font("Serif", Font.ITALIC, 16));
 		usuarioAtual.setBounds(268, 12, 292, 15);
 		contentPane.add(usuarioAtual);
@@ -76,7 +77,7 @@ public class Principal2 extends JFrame {
 	}
 
 	public void adicionarCliente() {
-
+		GerenciadorDeJanelas.telaCadastroDeCliente();
 	}
 
 	public void procurar() {

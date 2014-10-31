@@ -4,8 +4,7 @@ import java.util.List;
 
 public class ClienteDeAdvocacia implements Cliente {
 
-	public ClienteDeAdvocacia(String nome, String telefone, String cpf, String rg, String endereco, String email, 
-			Processo processo) {
+	public ClienteDeAdvocacia(String nome, String telefone, String cpf, String rg, String endereco, String email) {
 		
 		this.nome = nome;
 		this.telefone = telefone;
@@ -13,7 +12,6 @@ public class ClienteDeAdvocacia implements Cliente {
 		this.rg = rg;
 		this.endereco = endereco;
 		this.email = email;
-		processos.add(processo);
 	}
 
 	@Override
