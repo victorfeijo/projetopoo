@@ -77,7 +77,7 @@ public class CriarUsuario2 extends JFrame {
 				cadastrar();
 			}
 		});
-		btnCadastrar.setBounds(55, 198, 117, 25);
+		btnCadastrar.setBounds(227, 208, 117, 25);
 		contentPane.add(btnCadastrar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
@@ -86,7 +86,7 @@ public class CriarUsuario2 extends JFrame {
 				cancelar();
 			}
 		});
-		btnCancelar.setBounds(227, 198, 117, 25);
+		btnCancelar.setBounds(55, 208, 117, 25);
 		contentPane.add(btnCancelar);
 	}
 	

@@ -47,6 +47,17 @@ public final class Faixada {
 		clienteAtual = cliente;
 	}
 	
+	public static void cadastrarProcesso(String numero, String comarca,  String tipoDaAcao,
+			String valorDaCausa, String vara, boolean foiPago, double valorTotalPago,
+			String parcelamento, String dataAjuizamento, String dataAudiencia, String nome,
+			String cpf, String endereco, String obs){
+		
+		Processo processo = new ProcessoDeAdvocacia(numero, comarca, vara, tipoDaAcao, valorDaCausa, obs,
+				new Datas(dataAjuizamento,dataAudiencia), new PagamentoDeProcesso(foiPago, valorTotalPago, parcelamento),
+				new ParteContraria(nome, cpf, endereco));
+		escritorio.adicionarProcesso(processo);
+	}
+	
 	public static Funcionario getUsuarioAtual(){
 		return usuarioAtual;
 	}

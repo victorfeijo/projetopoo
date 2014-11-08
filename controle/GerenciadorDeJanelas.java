@@ -23,5 +23,10 @@ public final class GerenciadorDeJanelas {
 		application.setVisible(true);
 	}
 	
+	public static void telaCadastroDeProcesso(){
+		CadastrarProcesso2 application = new CadastrarProcesso2();
+		application.setVisible(true);
+	}
+	
 
 }
