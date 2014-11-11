@@ -3,7 +3,7 @@ import modelo.*;
 import view.*;
 import javax.swing.JOptionPane;
 
-import exception.SenhaInvalidaEX;
+import exception.*;
 
 public final class Faixada {
 
@@ -40,24 +40,38 @@ public final class Faixada {
 		}
 	}
 	
-	public static void cadastrarCliente(String nome, String cpf, String rg, String telefone, String endereco, String email){
+	public static void cadastrarCliente(String nome, String cpf, String rg, String telefone, String endereco, String email) throws CampoVazioEX {
 		
+		if(nome.length() == 0)
+			throw new CampoVazioEX("Preencher o campo Nome");
+		if(cpf.length() == 0)
+			throw new CampoVazioEX("Preencher o campo CPF/CNPJ");
+		if(rg.length() == 0)
+			throw new CampoVazioEX("Preencher o campo RG");
+		if(telefone.length() == 0)
+			throw new CampoVazioEX("Preencher o campo Telefone");
+		if(endereco.length() == 0)
+			throw new CampoVazioEX("Preencher o campo Endereço");
+		if(email.length() == 0)
+			throw new CampoVazioEX("Preencher o campo Email");
+		else{
 		Cliente cliente = new ClienteDeAdvocacia(nome, telefone, cpf, rg, endereco, email);
 		escritorio.adicionarCliente(cliente);
 		clienteAtual = cliente;
+		}
 	}
 	
 	public static void cadastrarProcesso(String numero, String comarca,  String tipoDaAcao,
 			String valorDaCausa, String vara, boolean foiPago, double valorTotalPago,
 			String parcelamento, String dataAjuizamento, String dataAudiencia, String nome,
-			String cpf, String endereco, String obs){
+			String cpf, String endereco, String obs) throws CampoVazioEX{
 		
 		Processo processo = new ProcessoDeAdvocacia(numero, comarca, vara, tipoDaAcao, valorDaCausa, obs,
 				new Datas(dataAjuizamento,dataAudiencia), new PagamentoDeProcesso(foiPago, valorTotalPago, parcelamento),
 				new ParteContraria(nome, cpf, endereco));
 		escritorio.adicionarProcesso(processo);
 	}
-	
+
 	public static Funcionario getUsuarioAtual(){
 		return usuarioAtual;
 	}
