@@ -168,8 +168,12 @@ public class ProcurarCliente extends JFrame{
 				(DefaultTableModel) table.getModel();
 		String cpf =(String) model.getValueAt(row, 1);
 		Cliente cliente = Faixada.clienteCpfCompleto(cpf);
+<<<<<<< HEAD
 		Faixada.setClienteAtual(cliente);
 		GerenciadorDeJanelas.telaDeDetalhes();
+=======
+		GerenciadorDeJanelas.telaDeDetalhes(cliente);
+>>>>>>> 2ce48b1f41e53c6e458253161c2ab3c1388bf5ae
 		
 	}
 	

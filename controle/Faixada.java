@@ -88,12 +88,16 @@ public final class Faixada {
 	public static void removerCliente(Cliente cliente){
 		escritorio.removerCliente(cliente);
 	}
+<<<<<<< HEAD
 	public static void setClienteAtual(Cliente cliente){
 		clienteAtual = cliente;
 	}
 	public static Cliente getClienteAtual(){
 		return clienteAtual;
 	}
+=======
+	
+>>>>>>> 2ce48b1f41e53c6e458253161c2ab3c1388bf5ae
 	
 	
 
