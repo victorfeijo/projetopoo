@@ -40,13 +40,8 @@ public final class GerenciadorDeJanelas {
 		
 	}
 	
-<<<<<<< HEAD
 	public static void telaDeDetalhes() {
 		DetalhesCliente application = new DetalhesCliente();
-=======
-	public static void telaDeDetalhes(Cliente clientes) {
-		DetalhesCliente application = new DetalhesCliente(clientes);
->>>>>>> 2ce48b1f41e53c6e458253161c2ab3c1388bf5ae
 		application.setVisible(true);
 	}
 

@@ -38,21 +38,12 @@ public class DetalhesCliente extends JFrame{
 		private JButton removerCliente;
 		private JLabel label;
 		private JTable table;
-<<<<<<< HEAD
 		private Cliente cliente;
 		
 		
 	public DetalhesCliente(){
 	
 		cliente = Faixada.getClienteAtual();
-=======
-		private Cliente clienteDetalhado;
-		
-		
-	public DetalhesCliente(Cliente cliente){
-	
-		this.clienteDetalhado = cliente;
->>>>>>> 2ce48b1f41e53c6e458253161c2ab3c1388bf5ae
 		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -115,11 +106,7 @@ public class DetalhesCliente extends JFrame{
 					    "Deletar Cliente",
 					    JOptionPane.YES_NO_OPTION);
 				if (resp==0){
-<<<<<<< HEAD
 					Faixada.removerCliente(cliente);
-=======
-					Faixada.removerCliente(clienteDetalhado);
->>>>>>> 2ce48b1f41e53c6e458253161c2ab3c1388bf5ae
 					dispose();
 				}
 				else{	
