@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import controle.Faixada;
+import exception.CampoVazioEX;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -219,7 +220,7 @@ public class CadastrarProcesso2 extends JFrame {
 	}
 	public void adicionar(){
 		
-		Faixada.cadastrarProcesso(numeroProceField.getText(), comarcaField.getText(),
+		try{Faixada.cadastrarProcesso(numeroProceField.getText(), comarcaField.getText(),
 				tipoAcaoField.getText(), valorDaCausaField.getText(), varaField.getText(),
 				true, // arrumar radio button, caso clicado em sim, manda true, else false
 				Double.parseDouble(valorTotalPagoField.getText()), parcelamentoField.getText(), dataAjuizaField.getText(),
@@ -227,5 +228,10 @@ public class CadastrarProcesso2 extends JFrame {
 				obsField.getText());
 		dispose();
 		JOptionPane.showMessageDialog(null, "O cadastro do Processo foi realizado com sucesso!");
+		}
+		catch(CampoVazioEX e){
+			JOptionPane.showMessageDialog(null, e.getMessage());
+		}
+		
 	}
 }
