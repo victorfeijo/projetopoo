@@ -72,7 +72,7 @@ public class Principal2 extends JFrame {
 		JLabel lblDate = new JLabel(c.get(Calendar.DAY_OF_MONTH) + "/"
 				+ c.get(Calendar.MONTH) + "/" + c.get(Calendar.YEAR));
 		lblDate.setFont(new Font("Serif", Font.ITALIC, 16));
-		lblDate.setBounds(599, 12, 93, 15);
+		lblDate.setBounds(579, 13, 100, 15);
 		contentPane.add(lblDate);
 	}
 
@@ -81,10 +81,11 @@ public class Principal2 extends JFrame {
 	}
 
 	public void procurar() {
+		GerenciadorDeJanelas.telaDeProcura();
 
 	}
 
 	public void eventos() {
-
+		GerenciadorDeJanelas.telaDeEventos();
 	}
 }

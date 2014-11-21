@@ -2,6 +2,7 @@ package modelo;
 
 import java.util.List;
 
+
 public interface Escritorio {
 	public void adicionarCliente(Cliente cliente);
 	public void adicionarProcesso(Processo processo);

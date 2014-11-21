@@ -8,12 +8,10 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import controle.Faixada;
 import controle.GerenciadorDeJanelas;
-import exception.CampoVazioEX;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -32,7 +30,7 @@ public class CadastrarCliente2 extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastrarCliente2() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 467, 405);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -113,16 +111,10 @@ public class CadastrarCliente2 extends JFrame {
 	}
 
 	public void cadastrar(){
-		try {
-			Faixada.cadastrarCliente(nomeField.getText(), cpfFied.getText(), rgField.getText(),
+		Faixada.cadastrarCliente(nomeField.getText(), cpfFied.getText(), rgField.getText(),
 				telefoneField.getText(), enderecoField.getText(), emailField.getText());
 		GerenciadorDeJanelas.telaCadastroDeProcesso();
 		dispose();
-		}
-		catch (CampoVazioEX e){
-			JOptionPane.showMessageDialog(null,e.getMessage());
-		}
-			
 	}
 
 	public void cancelar() {

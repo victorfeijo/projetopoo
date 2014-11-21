@@ -1,4 +1,5 @@
 package controle;
+import modelo.Cliente;
 import view.*;
 
 public final class GerenciadorDeJanelas {
@@ -28,5 +29,20 @@ public final class GerenciadorDeJanelas {
 		application.setVisible(true);
 	}
 	
+	public static void telaDeEventos(){
+		Eventos application = new Eventos();
+		application.setVisible(true);
+	}
+
+	public static void telaDeProcura() {
+		ProcurarCliente application = new ProcurarCliente();
+		application.setVisible(true);
+		
+	}
+	
+	public static void telaDeDetalhes() {
+		DetalhesCliente application = new DetalhesCliente();
+		application.setVisible(true);
+	}
 
 }

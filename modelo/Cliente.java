@@ -10,5 +10,6 @@ public interface Cliente {
 	public String getCpf();
 	public String getRg();
 	public String getEndereco();
+	public String getEmail();
 	
 }
