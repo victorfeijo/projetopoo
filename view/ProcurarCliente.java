@@ -118,9 +118,10 @@ public class ProcurarCliente extends JFrame{
 		 table.addMouseListener(new MouseAdapter(){
 			 public void mouseClicked(MouseEvent evt){
 				 int row = table.rowAtPoint(evt.getPoint());
-				 //int col = table.columnAtPoint(evt.getPoint());
+				 if(evt.getClickCount() == 2){
 				 detalhes(row);
 				 dispose();
+				 }
 				 
 			 }
 		 });
