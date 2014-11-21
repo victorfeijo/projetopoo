@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDeAdvocacia implements Cliente {
@@ -12,6 +13,7 @@ public class ClienteDeAdvocacia implements Cliente {
 		this.rg = rg;
 		this.endereco = endereco;
 		this.email = email;
+		this.processos=new ArrayList<Processo>();
 	}
 
 	@Override

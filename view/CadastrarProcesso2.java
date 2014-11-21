@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -34,6 +35,7 @@ public class CadastrarProcesso2 extends JFrame {
 	private JTextField enderecoField;
 	private JTextField obsField;
 	private JTextField valorDaCausaField;
+	private ButtonGroup group;
 
 	/**
 	 * Launch the application.
@@ -42,7 +44,7 @@ public class CadastrarProcesso2 extends JFrame {
 	 * Create the frame.
 	 */
 	public CadastrarProcesso2() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 636, 516);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -71,10 +73,15 @@ public class CadastrarProcesso2 extends JFrame {
 		
 		JRadioButton rdbtnSim = new JRadioButton("Sim");
 		rdbtnSim.setBounds(116, 137, 62, 23);
-		contentPane.add(rdbtnSim);
 		
 		JRadioButton rdbtnNo = new JRadioButton("Não");
 		rdbtnNo.setBounds(182, 137, 53, 23);
+		
+		group = new ButtonGroup();
+		group.add(rdbtnSim);
+		group.add(rdbtnNo);
+		
+		contentPane.add(rdbtnSim);
 		contentPane.add(rdbtnNo);
 		
 		JLabel lblValorTotalPago = new JLabel("Valor Total Pago");

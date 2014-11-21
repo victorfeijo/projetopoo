@@ -61,9 +61,10 @@ public class EscritorioDeAdvocacia implements Escritorio {
 
 		for (Cliente cliente : clientes) {
 			for (Processo processo : cliente.getProcessos()) {
-				if (processo.getNumero().substring(0, tamanhoDoProcesso)
-						.equals(numeroProcesso))
+				if (processo.getNumero().substring(0, tamanhoDoProcesso).equals(numeroProcesso)){
+					System.out.println("Encontrei");
 					clientesPorProcesso.add(cliente);
+				}
 			}
 		}
 		return clientesPorProcesso;
@@ -81,6 +82,16 @@ public class EscritorioDeAdvocacia implements Escritorio {
 		}
 		return clientesPorCpf;
 
+	}
+	
+	public Cliente getClientePorCpfCompleto(String cpf){
+		
+		for (Cliente cliente : clientes) {
+			if (cliente.getCpf().equals(cpf))
+				return cliente;
+		}
+		
+		return null;
 	}
 
 	@Override

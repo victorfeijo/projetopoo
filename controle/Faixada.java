@@ -1,4 +1,6 @@
 package controle;
+import java.util.List;
+
 import modelo.*;
 import view.*;
 import javax.swing.JOptionPane;
@@ -56,10 +58,35 @@ public final class Faixada {
 				new Datas(dataAjuizamento,dataAudiencia), new PagamentoDeProcesso(foiPago, valorTotalPago, parcelamento),
 				new ParteContraria(nome, cpf, endereco));
 		escritorio.adicionarProcesso(processo);
+		clienteAtual.receberProcesso(processo);
 	}
 	
 	public static Funcionario getUsuarioAtual(){
 		return usuarioAtual;
+	}
+	
+	public static Cliente clienteCpfCompleto(String textField){
+		Cliente cliente = escritorio.getClientePorCpfCompleto(textField);
+		return cliente;
+	}
+
+	public static List<Cliente> procurarNome(String textField)  {
+		List<Cliente> clientes = escritorio.getClientePorNome(textField);
+		return clientes;
+		
+	}
+	public static List<Cliente> procurarCpf(String textField)  {
+		List<Cliente> clientes = escritorio.getClientePorCpf(textField);
+		return clientes;
+
+	}
+	public static List<Cliente> procurarProcesso(String textField)  {
+		List<Cliente> clientes = escritorio.getClientePorProcesso(textField);
+		return clientes;
+		
+	}
+	public static void removerCliente(Cliente cliente){
+		escritorio.removerCliente(cliente);
 	}
 	
 	
