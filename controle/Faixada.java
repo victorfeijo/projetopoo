@@ -5,6 +5,7 @@ import modelo.*;
 import view.*;
 import javax.swing.JOptionPane;
 
+import exception.CampoVazioEX;
 import exception.SenhaInvalidaEX;
 
 public final class Faixada {
@@ -42,11 +43,29 @@ public final class Faixada {
 		}
 	}
 	
-	public static void cadastrarCliente(String nome, String cpf, String rg, String telefone, String endereco, String email){
+	public static void cadastrarCliente(String nome, String cpf, String rg, String telefone, String endereco, String email) throws CampoVazioEX{
 		
+		if(nome.length() == 0)
+			throw new CampoVazioEX("Completo o campo Nome corretamente");
+		if(cpf.length() == 0)
+			throw new CampoVazioEX("Completo o campo CPF/CNPJ corretamente");
+		if(cpf.length() != 11)
+			throw new CampoVazioEX("Completo o campo CPF/CNPJ corretamente");
+		if(!escritorio.getClientePorCpf(cpf).isEmpty())
+			throw new CampoVazioEX("O CPF/CNPJ " + cpf + " já está cadastrado");
+		if(rg.length() == 0)
+			throw new CampoVazioEX("Completo o campo RG corretamente");
+		if(telefone.length() == 0)
+			throw new CampoVazioEX("Completo o campo Telefone corretamente");
+		if(endereco.length() == 0)
+			throw new CampoVazioEX("Completo o campo Endereço corretamente");
+		if(email.length() == 0)
+			throw new CampoVazioEX("Completo o campo Email corretamente");
+		else{
 		Cliente cliente = new ClienteDeAdvocacia(nome, telefone, cpf, rg, endereco, email);
 		escritorio.adicionarCliente(cliente);
 		clienteAtual = cliente;
+		}
 	}
 	
 	public static void cadastrarProcesso(String numero, String comarca,  String tipoDaAcao,
@@ -66,23 +85,19 @@ public final class Faixada {
 	}
 	
 	public static Cliente clienteCpfCompleto(String textField){
-		Cliente cliente = escritorio.getClientePorCpfCompleto(textField);
-		return cliente;
+		return escritorio.getClientePorCpfCompleto(textField);
 	}
 
 	public static List<Cliente> procurarNome(String textField)  {
-		List<Cliente> clientes = escritorio.getClientePorNome(textField);
-		return clientes;
+		return escritorio.getClientePorNome(textField);
 		
 	}
 	public static List<Cliente> procurarCpf(String textField)  {
-		List<Cliente> clientes = escritorio.getClientePorCpf(textField);
-		return clientes;
+		return escritorio.getClientePorCpf(textField);
 
 	}
 	public static List<Cliente> procurarProcesso(String textField)  {
-		List<Cliente> clientes = escritorio.getClientePorProcesso(textField);
-		return clientes;
+		return escritorio.getClientePorProcesso(textField);
 		
 	}
 	public static void removerCliente(Cliente cliente){

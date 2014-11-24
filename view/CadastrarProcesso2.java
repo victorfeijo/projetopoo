@@ -118,7 +118,7 @@ public class CadastrarProcesso2 extends JFrame {
 		contentPane.add(lblEndereo);
 		
 		JLabel lblObservaes = new JLabel("Observações");
-		lblObservaes.setBounds(355, 320, 100, 15);
+		lblObservaes.setBounds(340, 148, 100, 15);
 		contentPane.add(lblObservaes);
 		
 		JLabel lblProcesso = new JLabel("Processo");
@@ -127,7 +127,7 @@ public class CadastrarProcesso2 extends JFrame {
 		contentPane.add(lblProcesso);
 		
 		numeroProceField = new JTextField();
-		numeroProceField.setBounds(198, 58, 114, 19);
+		numeroProceField.setBounds(198, 58, 381, 19);
 		contentPane.add(numeroProceField);
 		numeroProceField.setColumns(10);
 		
@@ -172,17 +172,17 @@ public class CadastrarProcesso2 extends JFrame {
 		nomeField.setColumns(10);
 		
 		cpfField = new JTextField();
-		cpfField.setBounds(116, 345, 114, 19);
+		cpfField.setBounds(116, 345, 211, 19);
 		contentPane.add(cpfField);
 		cpfField.setColumns(10);
 		
 		enderecoField = new JTextField();
-		enderecoField.setBounds(116, 372, 114, 19);
+		enderecoField.setBounds(116, 372, 211, 19);
 		contentPane.add(enderecoField);
 		enderecoField.setColumns(10);
 		
 		obsField = new JTextField();
-		obsField.setBounds(365, 345, 190, 70);
+		obsField.setBounds(365, 175, 214, 240);
 		contentPane.add(obsField);
 		obsField.setColumns(10);
 		
